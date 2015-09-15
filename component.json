@@ -9,7 +9,7 @@
         "css"
     ],
     "shim": {
-        "ui-pagination.js": {
+        "ui-countdown.js": {
              "deps": ["angular", "css!ui-countdown.css"],
             "exports": "'ui.countdown'"
         }
