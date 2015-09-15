@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "description": "倒计时指令",
+    "name": "ui-countdown",
+    "main": "ui-countdown.js",
+    "dependencies": [
+        "angular",
+        "countdown",
+        "css"
+    ],
+    "shim": {
+        "ui-pagination.js": {
+             "deps": ["angular", "css!ui-countdown.css"],
+            "exports": "'ui.countdown'"
+        }
+    }
+}
