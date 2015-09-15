@@ -1,4 +1,6 @@
 
+var countdown = require('countdown');
+
 angular.module("ui.countdown", [])
 
 .directive('countdown', function() {

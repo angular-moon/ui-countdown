@@ -10,7 +10,7 @@
     ],
     "shim": {
         "ui-countdown.js": {
-             "deps": ["angular", "countdown", "css!ui-countdown.css"],
+             "deps": ["angular", "css!ui-countdown.css"],
             "exports": "'ui.countdown'"
         }
     }
