@@ -34,13 +34,13 @@ angular.module("ui.countdown", [])
             html += buildTimeElement(ts.days, "天");
 
           if(ts.hours || html)
-            html += buildTimeElement(ts.hours, "时");
+            html += buildTimeElement(pad(ts.hours, 2), "时");
 
           if(ts.minutes || html)
-            html += buildTimeElement(ts.minutes, "分");
+            html += buildTimeElement(pad(ts.minutes, 2), "分");
 
           if(ts.seconds || html)
-            html += buildTimeElement(ts.seconds, "秒");
+            html += buildTimeElement(pad(ts.seconds, 2), "秒");
 
           if(ts.milliseconds !== undefined && html)
             html += buildTimeElement(pad(ts.milliseconds, 3), "毫秒");
