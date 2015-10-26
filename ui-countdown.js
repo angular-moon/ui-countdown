@@ -78,9 +78,9 @@ angular.module("ui.countdown", [])
           //使用指定时间作为开始时间
           function goStart(){
             start = scope.$eval(attr.start);
-            start = angular.isDate(start) ? start.getTime() : new Date(start.replace(/-/g, '/')).getTime();
+            start = angular.isDate(start) ? start.getTime() : new Date(angular.isString(start) ? start.replace(/-/g, '/') : start).getTime();
             end = scope.$eval(attr.countdown) || '1970/1/1';
-            end = angular.isDate(end) ? end.getTime() : new Date(end.replace(/-/g, '/')).getTime();
+            end = angular.isDate(end) ? end.getTime() : new Date(angular.isString(end) ? end.replace(/-/g, '/') : end).getTime();
             var now_time = new Date().getTime();
             function _go(){
               //根据客户端时间差计算新的开始时间,
@@ -107,7 +107,7 @@ angular.module("ui.countdown", [])
           //使用客户端当前时间作为开始时间
           function go(){
             end = scope.$eval(attr.countdown) || '1970/1/1';
-            end = angular.isDate(end) ? end : new Date(end.replace(/-/g, '/'));
+            end = angular.isDate(end) ? end : new Date(angular.isString(end) ? end.replace(/-/g, '/') : end);
             var now = new Date();
             if(end > now){
               timerId = countdown(
