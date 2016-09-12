@@ -73,7 +73,13 @@ angular.module("ui.countdown", [])
           var end;
 
           //是否监控时间变化
-          var watch = scope.$eval(attr.watch);
+          //修复firefox 下的bug, firefox 实现了 Object.prototype.watch(), 和 watch 命名冲突了
+          //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch
+          var watch;
+          if(attr.watch === Object.prototype.watch)
+            watch = false;
+          else
+            scope.$eval(attr.watch);
           
           //使用指定时间作为开始时间
           function goStart(){
