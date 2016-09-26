@@ -79,7 +79,7 @@ angular.module("ui.countdown", [])
           if(attr.watch === Object.prototype.watch)
             watch = false;
           else
-            scope.$eval(attr.watch);
+            watch = scope.$eval(attr.watch);
           
           //使用指定时间作为开始时间
           function goStart(){
