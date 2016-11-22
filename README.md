@@ -3,7 +3,7 @@
 
 ### countdown 配置属性:
 
-* <code>countdown</code> (Defaults: '1970-1-1'): 倒计时结束时间 支持类型 -> Date对象, UTC时间戳, 时间字符串 eg:"2015-9-14 12:00:00"
+* <code>countdown</code> (Defaults: '1970-1-1'): 倒计时结束时间 支持类型 -> Date对象, UTC时间戳, 时间字符串 eg:"'2015-9-14 12:00:00'" (注意要使用双层引号)
 
 * <code>show-ms</code>  (Defaults: false):是否显示毫秒
 
