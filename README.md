@@ -10,7 +10,7 @@
 
 * <code>watch</code>  (Defaults: false):是否监测start 和 countdown的变化
 
-* <code>over-title</code>  (Defaults: '已结束'):倒计时结束后显示的内容
+* <code>over-title</code>  (Defaults: '已结束'):倒计时结束后显示的内容, over-title=false, 不显示结束文字
 
 * <code>start</code>  (Defaults: null):倒计时开始时间, 一般用于使用服务器端的当前时间来计算倒计时. 由于网络和客户端计算时间差等原因可能会有一定的误差. (目前采用的方案经过测试误差还是在可接受的范围内).建议最好用[服务器返回的当前时间+网络延迟的时间]作为开始时间
 
@@ -22,3 +22,5 @@
 * 如果想自定义数字的样式,请覆盖 class .countdown i
 
 * 如果想自定义倒计时结束文字的样式,请覆盖 class .over
+
+* 倒计时结束时会发送(emit)一个事件通知, countdown-over
