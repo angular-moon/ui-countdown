@@ -56,12 +56,13 @@ angular.module("ui.countdown", [])
             alert("请引用countdown.js");
             return;
           }
-         
+
           //定时器句柄
           var timerId;
 
           //倒计时结束提示
-          var overTitle = attr.overTitle ? "<span class='over'>"+attr.overTitle+"</span>" : "<span class='over'>已结束</span>";
+          var overTitle = attr.overTitle ? (attr.overTitle === "false" ? "" : "<span class='over'>"+attr.overTitle+"</span>")
+              : "<span class='over'>已结束</span>";
 
           //是否显示毫秒
           var ms = scope.$eval(attr.showMs);
@@ -98,6 +99,7 @@ angular.module("ui.countdown", [])
                 elem.html(timespanToHtml(ts));
               else{
                 elem.html(overTitle);
+                scope.$emit('countdown-over', scope.$eval(attr.countdown));
                 window.clearInterval(timerId);
               }
             }
@@ -123,6 +125,7 @@ angular.module("ui.countdown", [])
                   elem.html(timespanToHtml(ts));
                 else{
                   elem.html(overTitle);
+                  scope.$emit('countdown-over', scope.$eval(attr.countdown));
                   window.clearInterval(timerId);
                 }
               },end, ms ? countdown.DEFAULTS | countdown.MILLISECONDS : countdown.DEFAULTS);
